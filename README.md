@@ -21,3 +21,4 @@ Health Check: EC2 Status Checks
 6. Add main.py
 7. Add Python logic to extract and print state of ec2 instances
 8. Run script with `python3 main.py`
+9. Use scheduler library to run status check regularly
