@@ -11,3 +11,7 @@ Health Check: EC2 Status Checks
 - Create EC2 Instances with Terraform
 - Write a Python script that fetches statuses of EC2 Instances and prints to the console
 - Extend the Python script to continuously check the status of EC2 Instances in a specific interval
+
+## Implementation steps:
+1. Copy Terraform starting code from [demo repository](https://gitlab.com/twn-devops-bootcamp/latest/14-automation-with-python/terraform/-/tree/feature/starting-code)
+2. Execute `terraform init`
