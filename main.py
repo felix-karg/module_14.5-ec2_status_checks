@@ -12,3 +12,6 @@ def check_instance_status():
             print(f"Status of instance {instance['InstanceId']} is {instance['State']['Name']}")
 
 schedule.every(5).minutes.do(check_instance_status)
+
+while True:
+    schedule.run_pending()
