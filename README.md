@@ -15,3 +15,6 @@ Health Check: EC2 Status Checks
 ## Implementation steps:
 1. Copy Terraform starting code from [demo repository](https://gitlab.com/twn-devops-bootcamp/latest/14-automation-with-python/terraform/-/tree/feature/starting-code)
 2. Execute `terraform init`
+3. Add two additional resource definitions for ec2 instances
+4. Apply: `terraform apply`
+5. Go to aws console and verify that resources are created

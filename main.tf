@@ -1,4 +1,6 @@
-provider "aws" {}
+provider "aws" {
+    region = "eu-west-3"
+}
 
 variable vpc_cidr_block {}
 variable subnet_cidr_block {}
@@ -123,6 +125,44 @@ resource "aws_instance" "myapp-server" {
 
   tags = {
     Name = "${var.env_prefix}-server"
+  }
+
+  user_data = file("entry-script.sh")
+  
+  user_data_replace_on_change = true
+
+}
+
+resource "aws_instance" "myapp-server-2" {
+  ami                         = data.aws_ami.amazon-linux-image.id
+  instance_type               = var.instance_type
+  key_name                    = "myapp-key"
+  associate_public_ip_address = true
+  subnet_id                   = aws_subnet.myapp-subnet-1.id
+  vpc_security_group_ids      = [aws_security_group.myapp-sg.id]
+  availability_zone			      = var.avail_zone
+
+  tags = {
+    Name = "${var.env_prefix}-server-2"
+  }
+
+  user_data = file("entry-script.sh")
+  
+  user_data_replace_on_change = true
+
+}
+
+resource "aws_instance" "myapp-server-3" {
+  ami                         = data.aws_ami.amazon-linux-image.id
+  instance_type               = var.instance_type
+  key_name                    = "myapp-key"
+  associate_public_ip_address = true
+  subnet_id                   = aws_subnet.myapp-subnet-1.id
+  vpc_security_group_ids      = [aws_security_group.myapp-sg.id]
+  availability_zone			      = var.avail_zone
+
+  tags = {
+    Name = "${var.env_prefix}-server-3"
   }
 
   user_data = file("entry-script.sh")
