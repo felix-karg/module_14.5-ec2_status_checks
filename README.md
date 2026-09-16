@@ -18,3 +18,6 @@ Health Check: EC2 Status Checks
 3. Add two additional resource definitions for ec2 instances
 4. Apply: `terraform apply`
 5. Go to aws console and verify that resources are created
+6. Add main.py
+7. Add Python logic to extract and print state of ec2 instances
+8. Run script with `python3 main.py`
